@@ -1,0 +1,172 @@
+<!--! Stellar.js v0.3 | Copyright 2012, Mark Dalgleish | http://markdalgleish.com/projects/stellar.js | http://markdalgleish.mit-license.org */ Plugins used: waypoints, stellar.js, and jquery easing-->
+<!-- website I got the majority of my code from: http://webdesign.tutsplus.com/tutorials/create-a-parallax-scrolling-website-using-stellar-js--webdesign-7307-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mathew Solomon's Blog</title>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/animate.css">
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/jquery.stellar.min.js"></script>
+<script type="text/javascript" src="js/waypoints.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+<script>
+
+	//$("#commentSent").hide();
+
+  	function validate()
+  	{
+  		var f=document.forms["comment"]["firstname"].value;
+		var l=document.forms["comment"]["lastname"].value;
+  		var e=document.forms["comment"]["email"].value;
+    	var t=document.forms["comment"]["message"].value;
+		var e=document.forms["comment"]["email"].value;
+		var happy = true;
+
+  		if( document.comment.firstname.value == "" )
+   		{
+     		alert( "Please provide your first name" );
+     		document.comment.firstname.focus() ;
+     		return false;
+   		}
+  		if( document.comment.lastname.value == "" )
+   		{
+     		alert( "Please provide your last name" );
+     		document.comment.lastname.focus() ;
+     		return false;
+   		}
+   		if( document.comment.email.value == "" || e.indexOf("@") === -1  )
+   		{
+		    alert( "Please provide a valid Email" );
+		    document.comment.email.focus() ;
+		    return false;
+   		}
+   		if(document.comment.message.value == "")
+  		{
+  			alert("Message is blank");
+  			document.comment.message.focus();
+  			return false;
+  		}
+   		if (happy == true) {
+
+   			alert("First Name: " + f + '\n' + "Last Name: " + l + '\n' + "Email: " + e + '\n' + "Message: " + t);
+			document.getElementById("contactform").className = "animated bounceOutUp";
+			$('#commentSent').show();
+		    $('#commentSent').animate( {
+		      left: '380px',
+		      top: '200px',
+		      width: '400px',
+		      height: '100px',
+		      opacity: 1
+		    } );
+
+			return false;
+   		};
+  	}
+
+</script>
+
+
+</head>
+
+<body>
+
+	<nav class="navigation">
+		<li data-slide="1">Home</li>
+		<li data-slide="2">About Me</li>
+		<li data-slide="3">Details</li>
+		<li data-slide="4">Contact</li>
+	</nav>
+
+
+          
+	<img id="envatologo" class="animated flip" src="images/ms-logo-no-background.png">
+
+	<figcaption class="hometext">
+		<p>Genius is the ability to put into effect what is on your mind. </br> - F Scott Fitzgerald</p>
+	</figcaption>
+	
+
+	<section class="slide" id="slide1" data-slide="1" data-stellar-background-ratio="0.5">
+		
+		<!--<a class="button" data-slide="2" title=""></a>-->
+
+	</section><!--End Slide 1-->
+
+
+
+	<section class="slide" id="slide2" data-slide="2" data-stellar-background-ratio="0.5">
+
+
+		<figcaption class="slideno">About Me</figcaption>
+		<article id="aboutme">
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at lorem nec turpis gravida ornare. Proin vel felis ultricies, elementum tellus id, congue mi. Nunc adipiscing neque nec lectus scelerisque, vel vestibulum lacus ultrices. Nulla facilisi. Ut bibendum sagittis quam, vitae sollicitudin mauris molestie a. Aliquam hendrerit vitae urna et auctor. Pellentesque nisi libero, blandit rutrum semper non, venenatis at magna.</br></br>
+
+				Fusce consequat sem congue massa cursus rutrum. Vestibulum justo elit, eleifend at bibendum in, aliquet ut purus. Nullam sodales dolor non lobortis eleifend. Nam bibendum nisi velit, eget congue odio hendrerit sed. Curabitur venenatis est at ornare aliquam. In hac habitasse platea dictumst. Praesent eleifend odio et arcu pulvinar gravida. Praesent consectetur sagittis orci eu ullamcorper. Nunc dignissim suscipit enim, a sodales turpis adipiscing nec. Mauris et lacus ut ante lobortis posuere. Mauris scelerisque leo massa, a commodo erat tempus vitae. Cras eu neque at lorem porttitor auctor at facilisis felis. Vestibulum pharetra volutpat ante non molestie. Nulla quis orci dignissim, aliquet quam sit amet, porta dui.
+			</p>
+		</article>
+		
+		<img id = "aboutmepic" src="images/mat.jpg" alt="Smiley face" height="300" width="400">
+
+	</section><!--End Slide 2-->
+
+
+
+
+
+	<section class="slide" id="slide3" data-slide="3" data-stellar-background-ratio="0.5">
+		<!--<div class="wrapper">
+		
+			<img src="images/slide3/freelance.png" data-stellar-ratio="1.4" data-stellar-vertical-offset="-102"alt="">
+			<img src="images/slide3/psdtuts.png" data-stellar-ratio="1.5" data-stellar-vertical-offset="-53"alt="">
+			<img src="images/slide3/rockable.png" data-stellar-ratio="2.7" data-stellar-vertical-offset="-200"alt="">
+			<img src="images/slide3/themeforest.png" data-stellar-ratio="3" data-stellar-vertical-offset="-200"alt="">
+			<img src="images/slide3/tutshub.png" data-stellar-ratio="1" data-stellar-vertical-offset="-200"alt="">
+			<img src="images/slide3/psdtuts.png" data-stellar-ratio="1.5" data-stellar-vertical-offset="-200"alt="">
+		</div>-->
+		<p id="yosemite">
+			To learn more about my trip to Yosemtie National Park, </br> Click on my face!
+		</p>
+		<figcaption class="slideno">Details</figcaption>
+		<!--<a class="button" data-slide="4" title=""></a>-->
+		<a href="www.mxs10c.com">
+		<img id = "detailspic" src="images/me-yosemite.jpg" alt="Smiley face" height="350" width="450"></a>
+
+	</section><!--End Slide 3-->
+
+
+
+
+
+
+	<section class="slide" id="slide4" data-slide="4" data-stellar-background-ratio="0">
+		
+
+		<figcaption class="slideno">Contact</figcaption>
+
+		<form name ="comment" id ="contactform" onSubmit="return validate();">
+			<center><b>Comment</b></center><br>
+			First name: <br> <input class="input"type="text" name="firstname"><br><br>
+			Last name: <br> <input class="input" type="text" name="lastname"><br><br>
+			Email: <br> <input class="input" type="email" name="email"> <br><br>
+			Message: <br> <textarea class="input" rows="4" cols="21" name="message"></textarea><br><br>
+			<center><input type="submit" value="Submit"></center>
+		</form>
+
+		<!--<div id="commentSent">
+
+			<h2>You comment has been sent to Mathew!</h2>
+		</div>-->
+
+
+	</section><!--End Slide 4-->
+</body>
+</html>
